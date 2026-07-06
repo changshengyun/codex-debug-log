@@ -10,13 +10,30 @@ The global Codex instruction file is:
 C:\Users\Legion\.codex\AGENTS.md
 ```
 
-It tells Codex to write meaningful debug cases back to:
+It tells Codex to ask whether meaningful debug cases should be written back to:
 
 ```text
 D:\DevEnv\Work\codex-debug-log
 ```
 
-This means a Debug task from another project should still produce or update a case folder in this central repository.
+This means a Debug task from another project can still produce or update a case folder in this central repository, but it should not happen automatically after every intermediate attempt.
+
+## Approval Rule
+
+Central log writing is approval-based.
+
+After a Debug task or fix, Codex should ask:
+
+```text
+要不要把这次 Debug 写入中央 debug log，并同步到 GitHub？
+```
+
+Write to the central log only when:
+
+- the user says yes, or
+- the user already explicitly requested logging in the current task.
+
+This avoids wasting space when the first fix is unsatisfactory and the user asks for more changes before finalizing the record.
 
 ## How To Ask In Any Project
 
@@ -59,6 +76,14 @@ Example:
 
 ```text
 2026-07-06_1059_codex-cli-device-auth-tls-ca-failure
+```
+
+Each case README must include:
+
+```text
+Debug Name: <short human-readable name>
+Bug Cause: <short cause label>
+Cause Summary: <one to three sentences explaining what happened and why>
 ```
 
 ## What Gets Written
@@ -113,7 +138,7 @@ If a temporary file must be kept, write down:
 
 ## Git Sync Rule
 
-After updating this repository:
+After the user approves writing to this repository:
 
 ```powershell
 cd D:\DevEnv\Work\codex-debug-log
@@ -150,4 +175,3 @@ Still write final debug reports to:
 
 D:\DevEnv\Work\codex-debug-log
 ```
-

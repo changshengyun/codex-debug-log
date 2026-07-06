@@ -18,6 +18,16 @@ debug-cases/
 
 The professional report records the technical investigation, evidence, root cause, fix, and rollback. The personal retrospective records the user's debug thinking, mistakes, turning points, and reusable lessons.
 
+Each case `README.md` must include quick-recall fields:
+
+```text
+Debug Name: <short human-readable name>
+Bug Cause: <short cause label>
+Cause Summary: <one to three sentences explaining what happened and why>
+```
+
+Central log writing is approval-based. After a Debug task, Codex should ask whether to write the case into this repository unless the user already explicitly requested it.
+
 ## Temporary Artifact Rule
 
 When a task creates temporary backups, diagnostic logs, exported registry files, traces, or local proof files, remove them before finishing unless the user explicitly asks to keep them. If a backup must be kept for safety, mention the exact path and reason in the final response.
@@ -46,6 +56,6 @@ These are repo-managed drafts. To make a skill automatically discoverable by Cod
 
 ## Cases
 
-| Date | Case | Professional Report | Retrospective |
-| --- | --- | --- | --- |
-| 2026-07-06 | [Codex CLI device-auth TLS CA failure](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/README.md) | [report.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/professional-debug-report/report.md) | [retrospective.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/personal-retrospective/retrospective.md) |
+| Date | Debug Name | Bug Cause | Case | Professional Report | Retrospective |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-06 | Codex CLI device-auth TLS CA failure | TLS CA initialization path | [Case README](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/README.md) | [report.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/professional-debug-report/report.md) | [retrospective.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/personal-retrospective/retrospective.md) |

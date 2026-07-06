@@ -10,11 +10,12 @@ description: Convert spoken or messy debug notes into structured Codex debug cas
 1. Extract facts before writing conclusions.
 2. Separate verified evidence from inference.
 3. Build the debug case around the normal path versus actual path.
-4. Write two outputs for each case:
+4. Ask the user before writing to the central debug log unless they already explicitly requested logging in the current task.
+5. Write two outputs for each approved case:
    - `professional-debug-report/report.md`
    - `personal-retrospective/retrospective.md`
-5. If the user speaks informally, remove filler words and preserve intent. Do not preserve hesitation, repetition, or self-correction unless it changes meaning.
-6. Clean up temporary backups and diagnostic artifacts before finishing unless the user explicitly asks to keep them.
+6. If the user speaks informally, remove filler words and preserve intent. Do not preserve hesitation, repetition, or self-correction unless it changes meaning.
+7. Clean up temporary backups and diagnostic artifacts before finishing unless the user explicitly asks to keep them.
 
 ## Case Folder Format
 
@@ -40,6 +41,14 @@ Example:
 
 ```text
 2026-07-06_1059_codex-cli-device-auth-tls-ca-failure
+```
+
+Each case `README.md` must include quick-recall fields:
+
+```text
+Debug Name: <short human-readable name>
+Bug Cause: <short cause label>
+Cause Summary: <one to three sentences explaining what happened and why>
 ```
 
 ## Professional Report Structure
@@ -145,6 +154,7 @@ When converting口语化 text:
 - Do not call an inducing event the root cause unless evidence proves causality.
 - If changing environment variables, registry values, credentials, or tool config, create a backup when appropriate, use it only as a rollback safety net, and delete the backup after validation unless it must be retained.
 - Before final response, check for local artifacts such as `*.reg`, `*.log`, trace files, packet captures, temporary scripts, and generated diagnostics. Delete unneeded artifacts and report any retained files.
+- Do not write every intermediate debug attempt to the central log. If the user is still asking for modifications or is not satisfied with the result, wait. Ask for approval after the current debug/fix is complete.
 
 ## References
 

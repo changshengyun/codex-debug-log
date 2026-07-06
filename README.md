@@ -8,19 +8,37 @@ Each debug case uses one timestamped folder:
 
 ```text
 debug-cases/
-  YYYY-MM-DD_HHMM_short-error-cause/
-    README.md
-    professional-debug-report/
-      report.md
-    personal-retrospective/
-      retrospective.md
+  <debug-type>/
+    <project-name>/
+      YYYY-MM-DD_HHMM_short-error-cause/
+        README.md
+        professional-debug-report/
+          report.md
+        personal-retrospective/
+          retrospective.md
 ```
 
 The professional report records the technical investigation, evidence, root cause, fix, and rollback. The personal retrospective records the user's debug thinking, mistakes, turning points, and reusable lessons.
 
+Debug type folders:
+
+```text
+frontend
+backend
+ai-agent
+system-environment
+tooling-devops
+database-data
+mobile-desktop
+security-auth
+other
+```
+
 Each case `README.md` must include quick-recall fields:
 
 ```text
+Debug Type: <debug-type>
+Project: <project-name>
 Debug Name: <short human-readable name>
 Bug Cause: <short cause label>
 Cause Summary: <one to three sentences explaining what happened and why>
@@ -58,4 +76,4 @@ These are repo-managed drafts. To make a skill automatically discoverable by Cod
 
 | Date | Debug Name | Bug Cause | Case | Professional Report | Retrospective |
 | --- | --- | --- | --- | --- | --- |
-| 2026-07-06 | Codex CLI device-auth TLS CA failure | TLS CA initialization path | [Case README](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/README.md) | [report.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/professional-debug-report/report.md) | [retrospective.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/personal-retrospective/retrospective.md) |
+| 2026-07-06 | Codex CLI device-auth TLS CA failure | TLS CA initialization path | [Case README](debug-cases/system-environment/codex-cli/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/README.md) | [report.md](debug-cases/system-environment/codex-cli/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/professional-debug-report/report.md) | [retrospective.md](debug-cases/system-environment/codex-cli/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/personal-retrospective/retrospective.md) |

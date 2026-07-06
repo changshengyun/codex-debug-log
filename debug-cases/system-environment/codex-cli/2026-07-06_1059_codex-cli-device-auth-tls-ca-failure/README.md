@@ -4,6 +4,8 @@
 
 ```text
 Timestamp: 2026-07-06 10:59
+Debug Type: system-environment
+Project: codex-cli
 Debug Name: Codex CLI device-auth TLS CA failure
 Bug Cause: TLS CA initialization path
 Cause Summary: Codex CLI could establish the HTTP proxy tunnel but closed the connection before sending TLS ClientHello. The most actionable cause was Codex failing on the default Windows/system roots TLS setup path; setting CODEX_CA_CERTIFICATE to Git for Windows' PEM CA bundle allowed TLS setup and login to complete.

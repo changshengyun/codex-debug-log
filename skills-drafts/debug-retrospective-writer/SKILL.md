@@ -23,15 +23,29 @@ Create one folder per debug case:
 
 ```text
 debug-cases/
-  YYYY-MM-DD_HHMM_short-error-cause/
-    README.md
-    professional-debug-report/
-      report.md
-    personal-retrospective/
-      retrospective.md
+  <debug-type>/
+    <project-name>/
+      YYYY-MM-DD_HHMM_short-error-cause/
+        README.md
+        professional-debug-report/
+          report.md
+        personal-retrospective/
+          retrospective.md
 ```
 
-Use a folder name that includes:
+Choose one debug type:
+
+- `frontend`: UI, browser, CSS, React/Vue/etc., layout, client-side state
+- `backend`: APIs, services, server errors, queues, workers
+- `ai-agent`: LLM prompts, tool calls, RAG, agents, model integration
+- `system-environment`: OS, shell, TLS, certs, proxy, credentials, local machine state
+- `tooling-devops`: Git, CI, build tools, package managers, deployment
+- `database-data`: SQL, migrations, data integrity, analytics
+- `mobile-desktop`: native mobile or desktop app issues
+- `security-auth`: auth flows, permissions, OAuth, tokens, secrets
+- `other`: cases that do not fit the above
+
+Use a case folder name that includes:
 
 - timestamp
 - affected system or tool
@@ -40,12 +54,14 @@ Use a folder name that includes:
 Example:
 
 ```text
-2026-07-06_1059_codex-cli-device-auth-tls-ca-failure
+debug-cases/system-environment/codex-cli/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure
 ```
 
 Each case `README.md` must include quick-recall fields:
 
 ```text
+Debug Type: <debug-type>
+Project: <project-name>
 Debug Name: <short human-readable name>
 Bug Cause: <short cause label>
 Cause Summary: <one to three sentences explaining what happened and why>

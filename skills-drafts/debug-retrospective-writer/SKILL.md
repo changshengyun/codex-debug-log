@@ -14,6 +14,7 @@ description: Convert spoken or messy debug notes into structured Codex debug cas
    - `professional-debug-report/report.md`
    - `personal-retrospective/retrospective.md`
 5. If the user speaks informally, remove filler words and preserve intent. Do not preserve hesitation, repetition, or self-correction unless it changes meaning.
+6. Clean up temporary backups and diagnostic artifacts before finishing unless the user explicitly asks to keep them.
 
 ## Case Folder Format
 
@@ -142,8 +143,9 @@ When converting口语化 text:
 - Change one variable at a time.
 - Keep a status table with `verified`, `excluded`, and `unconfirmed`.
 - Do not call an inducing event the root cause unless evidence proves causality.
+- If changing environment variables, registry values, credentials, or tool config, create a backup when appropriate, use it only as a rollback safety net, and delete the backup after validation unless it must be retained.
+- Before final response, check for local artifacts such as `*.reg`, `*.log`, trace files, packet captures, temporary scripts, and generated diagnostics. Delete unneeded artifacts and report any retained files.
 
 ## References
 
 Read `references/debug-template.md` when the task requires generating a reusable template or explaining the debug method.
-

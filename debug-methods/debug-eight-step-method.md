@@ -127,6 +127,13 @@ Each final case must include:
 - fix validation
 - rollback
 - open questions
+- temporary artifact cleanup status
+
+Before finishing, delete temporary backups, diagnostic logs, registry exports, packet captures, and local proof files unless they are intentionally retained. If a temporary artifact is retained, document:
+
+- path
+- reason
+- when it can be deleted
 
 ## Oral Notes Cleanup
 
@@ -138,4 +145,3 @@ When converting spoken notes:
 4. Turn vague pronouns into explicit nouns when context is clear.
 5. Mark assumptions.
 6. Output direct Markdown.
-

@@ -1,17 +1,44 @@
 # Codex Debug Log
 
-This repository stores maintainable Markdown records for Codex-related debugging work.
+This repository stores Codex-related debug cases and retrospectives.
 
-## Maintenance Rule
+## Repository Structure
 
-- Add one Markdown file for each independent debug case or maintenance update.
-- Keep verified evidence separate from inference.
-- Preserve rollback commands when the debug process changes local environment, tools, or account state.
-- Append future findings instead of overwriting the original evidence.
+Each debug case uses one timestamped folder:
 
-## Entries
+```text
+debug-cases/
+  YYYY-MM-DD_HHMM_short-error-cause/
+    README.md
+    professional-debug-report/
+      report.md
+    personal-retrospective/
+      retrospective.md
+```
 
-| Date | File | Topic |
-| --- | --- | --- |
-| 2026-07-06 | [2026-07-06-codex-cli-windows-deviceauth-ca-issue.md](2026-07-06-codex-cli-windows-deviceauth-ca-issue.md) | Codex CLI Windows device-auth login failure caused by TLS CA initialization path |
+The professional report records the technical investigation, evidence, root cause, fix, and rollback. The personal retrospective records the user's debug thinking, mistakes, turning points, and reusable lessons.
+
+## Method Library
+
+Reusable debug templates and thinking models live in:
+
+```text
+debug-methods/
+```
+
+## Skill Drafts
+
+Draft Codex skills for future automation live in:
+
+```text
+skills-drafts/
+```
+
+These are repo-managed drafts. To make a skill automatically discoverable by Codex, copy or install the skill folder into the user's Codex skills directory.
+
+## Cases
+
+| Date | Case | Professional Report | Retrospective |
+| --- | --- | --- | --- |
+| 2026-07-06 | [Codex CLI device-auth TLS CA failure](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/README.md) | [report.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/professional-debug-report/report.md) | [retrospective.md](debug-cases/2026-07-06_1059_codex-cli-device-auth-tls-ca-failure/personal-retrospective/retrospective.md) |
 

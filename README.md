@@ -30,6 +30,10 @@ Reusable debug templates and thinking models live in:
 debug-methods/
 ```
 
+Start here for cross-project usage:
+
+- [Cross-project debug log workflow](debug-methods/cross-project-debug-log-workflow.md)
+
 ## Skill Drafts
 
 Draft Codex skills for future automation live in:
